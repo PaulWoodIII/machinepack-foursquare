@@ -24,7 +24,8 @@
     "machineDir": "machines/",
     "machines": [
       "get-venue",
-      "list-venues"
+      "list-venues",
+      "search-venues"
     ]
   },
   "repository": {
