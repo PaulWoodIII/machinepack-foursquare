@@ -87,22 +87,14 @@ module.exports = {
         else {
             var query = inputs.query;
         }
-        console.log(query);
         if (!inputs.limit) {
             var limit = 10;
         }
         else {
             var limit = inputs.limit;
         }
-        console.log(limit);
-
         var url = "https://api.foursquare.com/v2/venues/search?client_id=" + client_id + "&client_secret=" + client_secret + "&v=" + version + "&ll=" + near + "&query=" + query + "&limit=" + limit;
-        console.log(url);
-        https.get(url, function(res) {
-            console.log("Got response: " + res.statusCode);
-        }).on('error', function(e) {
-            console.log("Got error: " + e.message);
-        });
+
         https.get(url, function(res) {
             var data = '';
             res.on("data", function(chunk) {
@@ -118,7 +110,6 @@ module.exports = {
                 };
             });
         }).on('error', function(e) {
-            console.log("Got error: " + e.message);
             return exits.error(e);
         });
     }
