@@ -103,11 +103,11 @@ module.exports = {
             res.on('end', function() {
                 try {
                     var obj = JSON.parse(data);
-                    return exits.success(obj);
+                    return exits.success(obj.response);
                 }
                 catch (e) {
                     return exits.error(e);
-                };
+                }
             });
         }).on('error', function(e) {
             return exits.error(e);
